@@ -26,17 +26,19 @@ export class Galactica {
     }
   }
 
+  let avgLifeExp = 0;
   getLifeExp(planet){
-    if(this.mercury == planet){
+
+    if(this.planet === mercury){
       return avgLifeExp = 407;
     }
-    else if(this.venus == planet){
+    else if(this.planet === venus){
       return avgLifeExp = 202;
     }
-    else if(this.mars == planet){
+    else if(this.planet === mars){
       return avgLifeExp = 125;
     }
-    else if(this.jupiter == planet){
+    else if(this.planet === jupiter){
       return avgLifeExp = 19;
     }
     else{
@@ -57,8 +59,8 @@ export class Galactica {
 
   //use JS date object here
   function dateDiffMillisec() {
-    let currentDate = new Date(yyyy, mo, da);
-    let inputDate = new Date(yyyy,mo, da);
+    let currentDate = new Date();
+    let inputDate = new Date();
 
     console.log(currentDate.setMilliseconds, inputDate.setMilliseconds);
     return Math.abs(currentDate.setMilliseconds - inputDate.setMilliseconds);
