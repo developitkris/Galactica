@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export class Galactica {
 
   constructor (earth, mercury, venus, mars, jupiter) {
@@ -26,8 +28,8 @@ export class Galactica {
     }
   }
 
-  let avgLifeExp = 0;
   getLifeExp(planet){
+    let avgLifeExp = 0;
 
     if(this.planet === mercury){
       return avgLifeExp = 407;
@@ -57,19 +59,17 @@ export class Galactica {
     return Math.floor(yrs*days*hours*mins*secs);
   }
 
-  //use JS date object here
-  function dateDiffMillisec() {
-    let currentDate = new Date();
-    let inputDate = new Date();
+  function earthDateDiff() {
+    let currDate = new Date(`${currYr}/${currMo}/${currDy}`);
+    let birthDate = new Date(`${birthYr}/${birthMo}/${birthDy}`);
 
-    console.log(currentDate.setMilliseconds, inputDate.setMilliseconds);
-    return Math.abs(currentDate.setMilliseconds - inputDate.setMilliseconds);
+    return Math.abs((Date.parse(currDate) - Date.parse(birthDate))/ 1000);
   }
 
-  function getYrsLeft(x) {
-    if (x<x.getLifeExp) {
-      return (x.getAge - x.getLifeExp);
+  function getYrsLeft() {
+    if (this.getAge<this.getLifeExp) {
+      return (this.getAge - this.getLifeExp);
     } else {
-      console.log("You surpassed the average life expectancy in your planet!");
+      console.log("You've surpassed the average life expectancy in your planet!  May you live long & prosper!!");
     }
     }
