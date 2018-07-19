@@ -28,6 +28,7 @@ export class Galactica {
     }
   }
 
+  //arbitrarily assigned LE, depending on duration of planet's solar yr
   getLifeExp(planet){
     let avgLifeExp = 0;
 
@@ -49,7 +50,7 @@ export class Galactica {
     }
   }
 
-  function ageMillisec(age) {
+  function ageIntoSec(age) {
     let yrs = age;
     let days = 365;
     let hours = 24;
